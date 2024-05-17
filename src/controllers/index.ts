@@ -8,11 +8,7 @@ import question from '../models/question';
 * @access PUBLIC
 */
 export const getSheetData = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-
     const data = await question.find();
-
-    console.log(data.length);
-
     res.status(200).json({
         success: true,
         data: data,
